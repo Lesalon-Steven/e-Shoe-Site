@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shoe Website - Shop</title>
+    <!-- Include Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100">
+    <!-- Navigation -->
+    <nav class="bg-gray-800 py-6">
+        <div class="container mx-auto flex justify-between items-center px-4">
+            <div class="text-white text-2xl font-semibold">Shoe Website</div>
+            <ul class="flex space-x-6 text-white">
+                <li><a href="/Homepage.html" class="hover:text-gray-300">Home</a></li>
+                <li><a href="/shop.html" class="hover:text-gray-300">Shop</a></li>
+                <li><a href="/about.html" class="hover:text-gray-300">About</a></li>
+                <li><a href="/contact.html" class="hover:text-gray-300">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Shop Content -->
+    <div class="container mx-auto my-8">
+        <h2 class="text-3xl-center font-semibold mb-6">Shop</h2>
+        <!-- Filter Section (Placeholder) -->
+        <div class="mb-6">
+            <h3 class="text-xl font-semibold mb-2">Filter by:</h3>
+            <!-- Add filter options here (e.g., categories, brands, price range, etc.) -->
+        </div>
+        <!-- Product Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            <!-- Product Card (Example) -->
+            <!-- Repeat this block for each product -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                <img src="https://via.placeholder.com/300" alt="Product Image" class="w-full h-64 object-cover">
+                <div class="p-4">
+                    <h3 class="text-xl font-semibold mb-2">Product Name</h3>
+                    <p class="text-gray-700">$99.99</p>
+                    <button class="mt-4 bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">Add to Cart</button>
+                </div>
+            </div>
+            <!-- End Product Card -->
+            <!-- Repeat product cards for other products -->
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 py-4 text-white text-center">
+        <div class="container mx-auto">
+            <p>&copy; 2024 Shoe Website. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
