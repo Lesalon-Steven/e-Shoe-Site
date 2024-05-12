@@ -39,8 +39,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Execute the statement
     if ($stmt->execute()) {
-        // Display success message using JavaScript alert
+        
+        // Display JavaScript alert
         echo '<script>alert("Registration successful!");</script>';
+
+        // Redirect to login page after successful registration
+        
+        
     } else {
         echo "Error: " . $stmt->error;
     }
