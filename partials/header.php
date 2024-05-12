@@ -16,10 +16,24 @@
         <div class="container mx-auto flex justify-between items-center px-4">
             <div class="text-white text-2xl font-semibold">Shoe Website</div>
             <ul class="flex space-x-6 text-white">
+
+            <?php
+            // Check if the user is logged in
+            if (isset($_SESSION['username'])) {
+                // User is logged in, display the "Logout" button
+                echo '<li><a href="logout.php" class="hover:text-gray-300">Logout</a></li>';
+            } else {
+                // User is not logged in, display the "Login/Register" button
+                echo '<li><a href="index.php?page=reglog" class="hover:text-gray-300">Login/Register</a></li>';
+            }
+            ?>
+
+
                 <li><a href="index.php" class="hover:text-gray-300">Home</a></li>
                 <li><a href="index.php?page=shop" class="hover:text-gray-300">Shop</a></li>
                 <li><a href="index.php?page=about" class="hover:text-gray-300">About</a></li>
                 <li><a href="index.php?page=contact" class="hover:text-gray-300">Contact</a></li>
+                
             </ul>
         </div>
     </nav>
