@@ -1,37 +1,55 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Data</title>
+    <!-- Include Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body>
+
 <?php
-session_start();
+// Database connection configuration
+$servername = "localhost"; // Change this if your database server is different
+$username = "root"; // Your MySQL root username
+$password = ""; // Your MySQL root password, if you have set one
+$dbname = "UserDB"; // Your database name
 
-// Check if the user is already logged in, redirect to home page if logged in
-if (isset($_SESSION['username'])) {
-    header("Location: index.php");
-    exit;
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
 }
 
-// Database connection
-$dbh = new PDO('mysql:host=localhost;dbname=UserDB', 'root', '', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+// If form is submitted
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Retrieve form data
+    $username = $_POST["registerUsername"];
+    $password = $_POST["registerPassword"];
+    $firstname = $_POST["registerFirstname"];
+    $lastname = $_POST["registerLastname"];
 
-// Handle registration
-if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["register"])) {
-    $username = $_POST["username"];
-    $password = $_POST["password"];
-    $firstname = $_POST["firstname"];
-    $lastname = $_POST["lastname"];
+    // Prepare and bind SQL statement
+    $stmt = $conn->prepare("INSERT INTO userdata (username, firstname, lastname, password) VALUES (?, ?, ?, ?)");
+    $stmt->bind_param("ssss", $username, $firstname, $lastname, $password);
 
-    // Check if username already exists
-    $sqlSelect = "SELECT id FROM users WHERE username = :username";
-    $stmt = $dbh->prepare($sqlSelect);
-    $stmt->execute(array(':username' => $username));
-    if ($stmt->fetch(PDO::FETCH_ASSOC)) {
-        $error = "Username already exists.";
+    // Execute the statement
+    if ($stmt->execute()) {
+        // Display success message using JavaScript alert
+        echo '<script>alert("Registration successful!");</script>';
     } else {
-        // Insert new user into database
-        $sqlInsert = "INSERT INTO users (username, password, firstname, lastname) VALUES (:username, :password, :firstname, :lastname)";
-        $stmt = $dbh->prepare($sqlInsert);
-        $stmt->execute(array(':username' => $username, ':password' => $password, ':firstname' => $firstname, ':lastname' => $lastname));
-        $success = "Registration successful. You can now login.";
+        echo "Error: " . $stmt->error;
     }
-}
 
-// Close database connection
-$dbh = null;
+    // Close statement and connection
+    $stmt->close();
+    $conn->close();
+}
 ?>
+
+</body>
+</html>

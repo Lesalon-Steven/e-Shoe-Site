@@ -16,9 +16,14 @@ if(isset($_POST['name']) && isset($_POST['email']) && isset($_POST['message'])) 
             $success = false;
         } else {
             // Insert the data into the database if the email doesn't exist
-            $sqlInsert = "INSERT INTO users (username, email, message) VALUES (:username, :email, :message)";
+            $sqlInsert = "INSERT INTO users (username, email, message, created_at) VALUES (:username, :email, :message, :created_at)";
             $stmt = $dbh->prepare($sqlInsert); 
-            $stmt->execute(array(':username' => $_POST['name'], ':email' => $_POST['email'], ':message' => $_POST['message'])); 
+            $stmt->execute(array(
+                ':username' => $_POST['name'],
+                ':email' => $_POST['email'],
+                ':message' => $_POST['message'],
+                ':created_at' => date('Y-m-d H:i:s') // Current timestamp
+            )); 
             
             // Check if the insertion was successful
             if($stmt->rowCount()) {
