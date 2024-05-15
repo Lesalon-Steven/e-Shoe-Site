@@ -29,7 +29,7 @@ To access our ecommerce shoe site, simply visit our website at [https://eshoesit
 Using our ecommerce shoe site is easy. Here are the steps to get started:
 
 
-1. Visit our website at [www.shoesite.com](https://www.shoesite.com).
+1. Visit our website at [https://eshoesite.000webhostapp.com/](https://eshoesite.000webhostapp.com/).
 
 2. Browse through our collection by using the search bar or navigating through different categories.
 
