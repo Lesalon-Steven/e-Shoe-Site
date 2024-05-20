@@ -44,7 +44,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo '<script>alert("Registration successful!");</script>';
 
         // Redirect to login page after successful registration
-        
+        header("Location: login.php");
         
     } else {
         echo "Error: " . $stmt->error;
