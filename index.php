@@ -17,6 +17,9 @@ if (array_key_exists($page, $config)) {
 } elseif ($page == 'login') {
     // Handle login page separately if not defined in the config
     include('pages/login.php');
+} elseif ($page == 'search') {
+    // Include search page
+    include('pages/search.php');
 } else {
     // Page not found, display a 404 error
     header("HTTP/1.0 404 Not Found");

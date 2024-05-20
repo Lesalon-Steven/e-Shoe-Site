@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,6 +6,28 @@
     <title>Registration Data</title>
     <!-- Include Tailwind CSS -->
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        .modal {
+            position: fixed;
+            z-index: 50;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+        .modal-content {
+            background-color: #fff;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 400px;
+            border-radius: 10px;
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
 
@@ -39,20 +60,35 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Execute the statement
     if ($stmt->execute()) {
-        
-        // Display JavaScript alert
-        echo '<script>alert("Registration successful!");</script>';
+        // Close statement and connection
+        $stmt->close();
+        $conn->close();
 
-        // Redirect to login page after successful registration
-        header("Location: login.php");
-        
+        // Display the styled modal and handle redirection
+        echo '
+        <div id="successModal" class="modal">
+            <div class="modal-content">
+                <p class="text-2xl font-semibold mb-4">Registration Successful!</p>
+                <p class="mb-4">You will be redirected to the login page shortly.</p>
+                <button id="redirectButton" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Go to Login</button>
+            </div>
+        </div>
+        <script>
+            document.getElementById("redirectButton").addEventListener("click", function() {
+                window.location.href = "login.php";
+            });
+
+            // Automatically redirect after 3 seconds
+            setTimeout(function() {
+                window.location.href = "login.php";
+            }, 3000);
+        </script>';
     } else {
         echo "Error: " . $stmt->error;
+        // Close statement and connection
+        $stmt->close();
+        $conn->close();
     }
-
-    // Close statement and connection
-    $stmt->close();
-    $conn->close();
 }
 ?>
 
