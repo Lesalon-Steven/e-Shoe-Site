@@ -18,24 +18,28 @@
                     Username:
                 </label>
                 <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="registerUsername" name="registerUsername" type="text" placeholder="Choose a username">
+                <p id="usernameError" class="text-red-500 text-xs italic hidden">Username is required.</p>
             </div>
             <div class="mb-4">
                 <label class="block text-gray-700 text-sm font-bold mb-2" for="registerPassword">
                     Password:
                 </label>
                 <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" id="registerPassword" name="registerPassword" type="password" placeholder="Choose a password">
+                <p id="passwordError" class="text-red-500 text-xs italic hidden">Password is required.</p>
             </div>
             <div class="mb-4">
                 <label class="block text-gray-700 text-sm font-bold mb-2" for="registerFirstname">
                     Firstname:
                 </label>
                 <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="registerFirstname" name="registerFirstname" type="text" placeholder="Enter your firstname">
+                <p id="firstnameError" class="text-red-500 text-xs italic hidden">Firstname is required.</p>
             </div>
             <div class="mb-6">
                 <label class="block text-gray-700 text-sm font-bold mb-2" for="registerLastname">
                     Lastname:
                 </label>
                 <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" id="registerLastname" name="registerLastname" type="text" placeholder="Enter your lastname">
+                <p id="lastnameError" class="text-red-500 text-xs italic hidden">Lastname is required.</p>
             </div>
             <div class="mb-4">
                 <label class="block text-gray-700 text-sm font-bold mb-2" for="registerProfilePicture">
@@ -57,6 +61,8 @@
             </a>
         </div>
     </div>
+
+    <!-- Include the validation script -->
     <script src="validate_register.js"></script>
 </body>
 </html>
