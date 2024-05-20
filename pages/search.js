@@ -16,7 +16,7 @@ document.getElementById('search').addEventListener('keyup', function() {
             alert(`Error ${xhr.status}: ${xhr.statusText}`); // e.g. 404: Not Found
         } else { // show the result
             // Update the product grid
-            document.getElementById('productGrid').innerHTML = xhr.responseText;
+            document.querySelector('#productGrid .grid').innerHTML = xhr.responseText;
         }
     };
 });
