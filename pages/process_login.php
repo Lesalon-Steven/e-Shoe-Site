@@ -35,7 +35,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($result->num_rows == 1) {
         // Authentication successful
         $_SESSION['username'] = $username;
-        header("Location: loggedin.php");
+        header("Location: index.php?page=loggedin");
         exit();
     } else {
         // Authentication failed

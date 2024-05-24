@@ -24,13 +24,13 @@
                 echo '<li><a href="logout.php" class="hover:text-gray-300">Logout</a></li>';
             } else {
                 // User is not logged in, display the "Login/Register" button
-                echo '<li><a href="pages/login.php" class="hover:text-gray-300">Login</a></li>';
+                echo '<li><a href="index.php?page=login" class="hover:text-gray-300">Login</a></li>';
             }
             ?>
 
 
                 <li><a href="index.php" class="hover:text-gray-300">Home</a></li>
-                <li><a href="pages/shop.php" class="hover:text-gray-300">Shop</a></li>
+                <li><a href="index.php?page=shop" class="hover:text-gray-300">Shop</a></li>
                 <li><a href="index.php?page=about" class="hover:text-gray-300">About</a></li>
                 <li><a href="index.php?page=contact" class="hover:text-gray-300">Contact</a></li>
                 

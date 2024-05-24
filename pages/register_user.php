@@ -12,7 +12,7 @@
         <h2 class="text-2xl font-semibold mb-6">Register</h2>
         
         <!-- Registration form -->
-        <form id="registerForm" action="process_register.php" method="post">
+        <form id="registerForm" action="index.php?page=process_register" method="post">
             <div class="mb-4">
                 <label class="block text-gray-700 text-sm font-bold mb-2" for="registerUsername">
                     Username:
@@ -56,7 +56,7 @@
         <!-- Link to login page -->
         <div class="flex items-center justify-between mt-4">
             <span>Already have an account?</span>
-            <a class="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800" href="login.php">
+            <a class="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800" href="index.php?page=login">
                 Login
             </a>
         </div>

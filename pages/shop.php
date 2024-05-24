@@ -19,7 +19,7 @@
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
         <!-- Static Product Cards (example) -->
         <div class="bg-white rounded-lg shadow-md overflow-hidden">
-            <img src="../assets/sneaker3.jpeg" alt="Product Image" class="w-full h-64 object-cover">
+            <img src="assets/sneaker3.jpeg" alt="Product Image" class="w-full h-64 object-cover">
             <div class="p-4">
                 <h3 class="text-xl font-semibold mb-2">Adidas Campus 00s</h3>
                 <p class="text-gray-700">$79.99</p>
@@ -27,7 +27,7 @@
             </div>
         </div>
         <div class="bg-white rounded-lg shadow-md overflow-hidden">
-            <img src="../assets/sneaker4.jpeg" alt="Product Image" class="w-full h-64 object-cover">
+            <img src="assets/sneaker4.jpeg" alt="Product Image" class="w-full h-64 object-cover">
             <div class="p-4">
                 <h3 class="text-xl font-semibold mb-2">Nike Air Zoom Pegasus</h3>
                 <p class="text-gray-700">$109.99</p>
@@ -38,6 +38,6 @@
     </div>
 </div>
 
-<script src="search.js"></script>
+<script src="pages/search.js"></script>
 </body>
 </html>

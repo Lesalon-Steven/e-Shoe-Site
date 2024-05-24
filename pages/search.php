@@ -20,7 +20,7 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
 // Output the results as HTML
 foreach ($products as $product) {
     echo '<div class="bg-white rounded-lg shadow-md overflow-hidden">';
-    echo '<img src="../assets/' . htmlspecialchars($product['image']) . '" alt="Product Image" class="w-full h-64 object-cover">';
+    echo '<img src="assets/' . htmlspecialchars($product['image']) . '" alt="Product Image" class="w-full h-64 object-cover">';
     echo '<div class="p-4">';
     echo '<h3 class="text-xl font-semibold mb-2">' . htmlspecialchars($product['name']) . '</h3>';
     echo '<p class="text-gray-700">$' . htmlspecialchars($product['price']) . '</p>';

@@ -5,7 +5,9 @@ document.getElementById('search').addEventListener('keyup', function() {
     const xhr = new XMLHttpRequest();
 
     // Configure it: GET-request for the URL /search.php?query=...
-    xhr.open('GET', 'search.php?query=' + encodeURIComponent(query), true);
+    xhr.open('GET', 'index.php?page=search&query=' + encodeURIComponent(query), true);
+
+    // xhr.open('GET', 'search.php?query=' + encodeURIComponent(query), true);
 
     // Send the request over the network
     xhr.send();

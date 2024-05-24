@@ -40,7 +40,9 @@ if(isset($_POST['name']) && isset($_POST['email']) && isset($_POST['message'])) 
         echo "Error: ".$e->getMessage();
         $success = false;
     } 
-    header("Location: display_data.php?name=" . urlencode($_POST['name']) . "&email=" . urlencode($_POST['email']) . "&message=" . urlencode($_POST['message']));
+    header("Location: index.php?page=display_data&name=" . urlencode($_POST['name']) . "&email=" . urlencode($_POST['email']) . "&message=" . urlencode($_POST['message']));
+
+    
     exit;     
 } else {
     // Redirect if form data is not complete
