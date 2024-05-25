@@ -40,6 +40,6 @@
     </div>
 
     <!-- Include the validation script -->
-    <script src="validate.js"></script>
+    <script src="pages/validate.js"></script>
 </body>
 </html>

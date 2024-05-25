@@ -35,7 +35,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($result->num_rows == 1) {
         // Authentication successful
         $_SESSION['username'] = $username;
-        header("Location: index.php?page=loggedin");
+        header("Location: index.php?page=home");
         exit();
     } else {
         // Authentication failed
@@ -67,7 +67,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         <!-- Button to go back to login page -->
         <div class="flex justify-center">
-            <a href="login.php" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+            <a href="index.php?page=login" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
                 Back to Login
             </a>
         </div>

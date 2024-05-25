@@ -75,12 +75,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </div>
         <script>
             document.getElementById("redirectButton").addEventListener("click", function() {
-                window.location.href = "login.php";
+                window.location.href = "index.php?page=login";
             });
 
             // Automatically redirect after 3 seconds
             setTimeout(function() {
-                window.location.href = "login.php";
+                window.location.href = "index.php?page=login";
             }, 3000);
         </script>';
     } else {

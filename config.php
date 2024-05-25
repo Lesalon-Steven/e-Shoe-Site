@@ -12,6 +12,8 @@ return array(
     'display_data' => 'pages/display_data.php',
     'messages' => 'messages.php',
     'loggedin' => 'pages/loggedin.php',
+    'search' => 'pages/search.php',
+    'logout' => 'pages/logout.php',
     
     
     

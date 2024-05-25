@@ -4,10 +4,10 @@ document.getElementById('search').addEventListener('keyup', function() {
     // Create a new XMLHttpRequest object
     const xhr = new XMLHttpRequest();
 
-    // Configure it: GET-request for the URL /search.php?query=...
+    // Configure it: GET-request for the URL index.php?page=search&query=...
     xhr.open('GET', 'index.php?page=search&query=' + encodeURIComponent(query), true);
 
-    // xhr.open('GET', 'search.php?query=' + encodeURIComponent(query), true);
+    
 
     // Send the request over the network
     xhr.send();

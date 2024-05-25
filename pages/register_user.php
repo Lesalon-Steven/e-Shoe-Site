@@ -63,6 +63,6 @@
     </div>
 
     <!-- Include the validation script -->
-    <script src="validate_register.js"></script>
+    <script src="pages/validate_register.js"></script>
 </body>
 </html>
